@@ -55,7 +55,7 @@ datlist <- simulate_counterfactuals(
 d_C <- weighted_distance(datlist$X, datlist$d, kappa_d = kappa_d)
 rho <- quantile(d_C, p = 0.25, names = FALSE)
 
-BSTS <- srunner_bsts(
+bsts <- srunner_bsts(
   sp_pct, datlist,
   T_0, tau, xi,
   n_burn = n_burn, n_iter = n_iter,
@@ -97,7 +97,7 @@ gsc <- srunner_gsc(
 
 # export results into a single summary table
 simout <- combine_replication(
-  list("BSTS" = BSTS, "DHS" = DHS, "DS2" = DS2, "GSC" = GSC),
+  list("BSTS" = bsts, "DHS" = dhs, "DS2" = ds2, "GSC" = gsc),
   i, T_0, J,
   kappa_d, mu_d, sp_pct
 )
