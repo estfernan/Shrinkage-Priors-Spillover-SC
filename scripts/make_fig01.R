@@ -45,7 +45,7 @@ p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
       "Distance Spike-and-Slab Prior",
       "Generalized Synthetic Control Method"
     ),
-    values = wong_colors()
+    values = c("#8da0cb", "#fc8d62", "#66c2a5", "#e78ac3")
   ) +
   scale_x_continuous(labels = percent) +
   scale_y_continuous(breaks = breaks_extended(n = 8), labels = percent) +
