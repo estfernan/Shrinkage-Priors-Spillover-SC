@@ -46,12 +46,13 @@ causal_impact <- function(Y, T_0, n_burn = 3000, n_iter = 2000, ...)
 #' Bayesian SC method with distance-based shrinkage priors
 #'
 db_bayesian_sc <- function(
-    Y, T_0,
-    d = 1, rho = 0,
-    prior = "DHS",
-    ...,
-    stan_dir = "pkg/stan",
-    force_recompile = FALSE
+  Y, T_0,
+  d = 1, rho = 0,
+  prior = "DHS",
+  i = 1,
+  ...,
+  stan_dir = "pkg/stan",
+  force_recompile = FALSE
 )
 {
   filename <- switch(prior, "DHS" = "SC-DHS", "DS2" = "SC-DS2")
@@ -63,15 +64,28 @@ db_bayesian_sc <- function(
 
   J <- p - 1
 
-  Y_tr <- Y[seq_len(T_0), 1]
-  X_tr <- Y[seq_len(T_0), -1]
+  Y_tr <- Y[seq_len(T_0), i]
+  X_tr <- Y[seq_len(T_0), -i]
 
-  Y_obs <- Y[, 1]
-  X_obs <- Y[, -1]
+  Y_obs <- Y[, i]
+  X_obs <- Y[, -i]
 
-  if (length(d) == 1)
+  n_dist <- length(d)
+
   {
-    d <- rep(d, times = J)
+    if (n_dist > J)
+    {
+      d <- d[-i]
+    }
+    else if (n_dist == 1)
+    {
+      d <- rep(d, times = J)
+    }
+  }
+
+  if (prior == "DHS")
+  {
+    d[d <= 0] <- 1e-10
   }
 
   standat <- list(
