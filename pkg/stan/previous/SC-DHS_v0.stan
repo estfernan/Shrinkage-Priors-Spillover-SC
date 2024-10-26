@@ -1,5 +1,5 @@
 /*
- * Bayesian synthetic control (SC) method with a distance-based horseshoe prior
+ * Bayesian synthetic control method with a distance-based horseshoe prior
  */
 
 data
@@ -17,23 +17,18 @@ data
 parameters
 {
   real psi;                   // coefficient for the lagged outcome term
-  vector[J] beta_raw;         // standardized SC coefficients
+  vector[J] beta;             // coefficients for the synthetic control
   vector<lower=0>[J] lambda;  // local shrinkage parameter
   real<lower=0> zeta;         // global shrinkage parameter
   real<lower=0> sigma;        // standard deviation for the outcomes
 }
 
-transformed parameters
-{
-  vector[J] beta = sigma * sqrt(zeta) * lambda .* beta_raw;
-}
-
 model
 {
   psi ~ normal(0, 3);
-  beta_raw ~ normal(0, 1);
+  beta ~ normal(0, lambda * zeta);
   lambda ~ cauchy(0, d);
-  zeta ~ cauchy(0, 1);
+  zeta ~ cauchy(0, sigma^2);
   sigma ~ student_t(4, 0, 1);
 
   for (t in 1:T_0)
