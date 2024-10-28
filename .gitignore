@@ -8,6 +8,7 @@
 !*/
 
 # Project specific files
+archive/*
 scripts/slurm/
 output/*.RDS
 output/reps/*.RDS
