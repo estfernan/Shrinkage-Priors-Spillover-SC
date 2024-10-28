@@ -23,6 +23,7 @@ simtab <- empirical_results(indir = "output/reps") %>%
     property = recode_factor(property, "pct_bias" = "Relative Bias (%)", "coverage" = "Coverage Probability (%)")
   )
 
+# figure 1: simulation results for relative bias and coverage probability
 p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
   geom_hline(
     data = simtab %>% filter(property == "Coverage Probability (%)"),
@@ -45,7 +46,7 @@ p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
       "Distance Spike-and-Slab Prior",
       "Generalized Synthetic Control Method"
     ),
-    values = c("#8da0cb", "#66c2a5", "#fc8d62", "#e78ac3")
+    values = c("#8da0cb", "#fc8d62", "#66c2a5", "#e78ac3")
   ) +
   scale_x_continuous(labels = percent) +
   scale_y_continuous(breaks = breaks_extended(n = 8), labels = percent) +

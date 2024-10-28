@@ -28,6 +28,7 @@ post_info <- draws_out %>%
     .by = c(prior, kappa_d, other)
   )
 
+# figure 2: change in relative volume sales
 p1 <- ggplot(post_info, mapping = aes(x = other, y = mean, ymin = lwr_CI, ymax = upp_CI, color = prior)) +
   geom_vline(xintercept = dates[T0], linetype = "dashed") +
   geom_errorbar() +
@@ -42,13 +43,13 @@ p1 <- ggplot(post_info, mapping = aes(x = other, y = mean, ymin = lwr_CI, ymax =
     name = "",
     breaks = c("DHS", "DS2"),
     labels = c("Distance Horseshoe Prior", "Distance Spike-and-Slab Prior"),
-    values = c("#66c2a5", "#fc8d62")
+    values = c("#fc8d62", "#66c2a5")
   ) +
   scale_x_date() +
   scale_y_continuous(labels = comma) +
   labs(
     x = TeX("Aggregated Four-Week Sales Reporting Period"),
-    y = TeX("Change in Relative Volume Sales in Ounces, $\\tau_t$")
+    y = TeX("Change in Relative Volume Sales in Ounces, $\\hat{\\tau}_t$")
   ) +
   theme_bw(base_size = 12) +
   theme(
@@ -62,4 +63,3 @@ p1 <- ggplot(post_info, mapping = aes(x = other, y = mean, ymin = lwr_CI, ymax =
   )
 
 save_plot("figs/fig02.pdf", plot = p1, width = 12, height = 9)
-
