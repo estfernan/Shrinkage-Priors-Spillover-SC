@@ -1,5 +1,5 @@
 # """
-# This script generates Figure S2-S3, which presents auxiliary experiments.
+# This script generates Figures S2-S3, which presents auxiliary experiments.
 #
 # It illustrates the finite-sample relative bias and coverage probability
 # for the proposed distance-based shrinkage priors and two comparison methods,
