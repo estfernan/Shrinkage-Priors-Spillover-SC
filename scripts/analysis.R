@@ -56,8 +56,7 @@ for (kappa_d in kappa_list)
     chains = n_chains,
     parallel_chains = 4,
     iter_warmup = n_burn, iter_sampling = n_iter,
-    max_treedepth = 12, adapt_delta = 0.99,
-    force_recompile = TRUE
+    max_treedepth = 12, adapt_delta = 0.99
   )
 
   tau_DHS <- std$s_hat[1] * tau_DHS
