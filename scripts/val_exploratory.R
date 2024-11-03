@@ -12,7 +12,8 @@ load("data/sample_information.RData")
 
 if (!exists("beverage_sales"))
 {
-  stop("FileNotFound: R Object 'beverage_sales' must be loaded.")
+  beverage_sales <- readRDS("data/sample_sales.RDS")
+  warning("FileNotFound: R Object 'beverage_sales' not found, loading sample data.")
 }
 
 longtab <- as.data.frame(beverage_sales, row.names = FALSE) %>%

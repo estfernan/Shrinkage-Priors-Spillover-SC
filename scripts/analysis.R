@@ -7,6 +7,9 @@
 # with weighted distances under various importance weights.
 # """
 
+library(dplyr)
+library(tidyr)
+
 source("pkg/models.R")
 source("pkg/ops.R")
 source("pkg/private.R")
@@ -24,7 +27,8 @@ kappa_list <- c(0.0, 0.1, 0.5, 1.0)
 
 if (!exists("beverage_sales"))
 {
-  stop("FileNotFound: R Object 'beverage_sales' must be loaded.")
+  beverage_sales <- readRDS("data/sample_sales.RDS")
+  warning("FileNotFound: R Object 'beverage_sales' not found, loading sample data.")
 }
 
 std <- standardize_matrix(beverage_sales, train = seq_len(T0))

@@ -31,7 +31,8 @@ pct_list   <- seq(from = 0, to = 0.5, by = 0.05)
 
 if (!exists("beverage_sales"))
 {
-  stop("FileNotFound: R Object 'beverage_sales' must be loaded.")
+  beverage_sales <- readRDS("data/sample_sales.RDS")
+  warning("FileNotFound: R Object 'beverage_sales' not found, loading sample data.")
 }
 
 std <- standardize_matrix(beverage_sales, train = seq_len(T0))
