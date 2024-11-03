@@ -10,7 +10,7 @@ Rather than simply excluding nearby controls, our method data-adaptively selects
 We demonstrate the finite-sample properties of our method under varying levels of spillover through simulation studies. 
 We then apply this approach to evaluate the impact of Philadelphia's beverage tax on the sales of sugar-sweetened and artificially sweetened beverages in mass merchandise stores.
 
-This repository contains the code and sample data needed to reproduce the results presented in the manuscript.[^1]
+This repository contains the code and sample data needed to reproduce the results in the manuscript.[^1]
 
 ## Data Availability
 
