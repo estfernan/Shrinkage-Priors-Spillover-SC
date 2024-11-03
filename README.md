@@ -60,4 +60,4 @@ colnames(beverage_sales)  # lists the three-digit zip code areas
 The `beverage_sales` object can be used to run both `scripts/analysis.R` and `scripts/val_cutoffs.R`.
 
 
-[^1]: The sections below assume familiarity with the methodology and setting described in the manuscript.
+[^1]: The sections assume familiarity with the methodology and setting described in the manuscript.
