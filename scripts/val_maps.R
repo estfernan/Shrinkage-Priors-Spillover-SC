@@ -44,7 +44,7 @@ volume_change <- beverage_sales %>%
   left_join(map, by = "zip3") %>%
   st_as_sf()
 
-# figure SX, panel (a): change in average relative volume sales
+# figure S7, panel (a): change in average relative volume sales
 p1 <- ggplot(data = volume_change, mapping = aes(fill = change)) +
   geom_sf() +
   coord_sf() +
@@ -58,7 +58,7 @@ p1 <- ggplot(data = volume_change, mapping = aes(fill = change)) +
   theme(legend.position = "bottom") +
   guides(fill = guide_colorbar(nrow = 1, title.position = "top", title.hjust = 0.5))
 
-# figure SX, panel (b): covariate similarity, weighted distances
+# figure S7, panel (b): covariate similarity, weighted distances
 p2 <- ggplot(data = volume_change, mapping = aes(fill = dist)) +
   geom_sf() +
   coord_sf() +
