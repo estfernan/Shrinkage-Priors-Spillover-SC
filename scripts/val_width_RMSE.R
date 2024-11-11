@@ -1,5 +1,5 @@
 # """
-# This script generates Figure S1, which presents auxiliary simulation results.
+# This script generates Figure S3, which presents auxiliary simulation results.
 #
 # It illustrates the finite-sample interval width and root-mean-square error
 # for the proposed distance-based shrinkage priors and two comparison methods,
@@ -55,4 +55,4 @@ p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
     strip.background =element_rect(fill = "grey90")
   )
 
-save_plot("sfigs/sfig01.pdf", plot = p1, width = 9, height = 6)
+save_plot("sfigs/sfig03.pdf", plot = p1, width = 9, height = 6)

@@ -1,5 +1,5 @@
 # """
-# This script generates Figures S2-S3, which presents auxiliary experiments.
+# This script generates Figures S4-S5, which presents auxiliary experiments.
 #
 # It illustrates the finite-sample relative bias and coverage probability
 # for the proposed distance-based shrinkage priors and two comparison methods,
@@ -58,7 +58,7 @@ p2 <- filter(simtab, property == "Relative Bias (%)") %>%
     strip.background =element_rect(fill = "grey90")
   )
 
-save_plot("sfigs/sfig02.pdf", plot = p2, width = 12, height = 8)
+save_plot("sfigs/sfig04.pdf", plot = p2, width = 12, height = 8)
 
 # figure S3: simulation results for coverage probability
 p2 <- filter(simtab, property == "Coverage Probability (%)") %>%
@@ -98,4 +98,4 @@ p2 <- filter(simtab, property == "Coverage Probability (%)") %>%
     strip.background =element_rect(fill = "grey90")
   )
 
-save_plot("sfigs/sfig03.pdf", plot = p2, width = 12, height = 8)
+save_plot("sfigs/sfig05.pdf", plot = p2, width = 12, height = 8)

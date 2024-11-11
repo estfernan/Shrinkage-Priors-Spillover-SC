@@ -1,5 +1,5 @@
 # """
-# This script generates Figure S5, which presents a set of trace plots.
+# This script generates Figure S8, which presents a set of trace plots.
 # """
 
 library(dplyr)
@@ -59,4 +59,4 @@ p1 <- ggplot(mcmc_iters, mapping = aes(x = iter, y = draw, color = prior)) +
     strip.background =element_rect(fill = "grey90")
   )
 
-save_plot("sfigs/sfig05.pdf", plot = p1, width = 14, height = 9)
+save_plot("sfigs/sfig08.pdf", plot = p1, width = 14, height = 9)

@@ -1,5 +1,5 @@
 # """
-# This script generates Figure S6, which presents auxiliary application results.
+# This script generates Figure S9, which presents auxiliary application results.
 #
 # It illustrates the effect of Philadelphia's beverage tax across different
 # values for the cutoff used in the distance-based spike-and-slab prior.
@@ -118,4 +118,4 @@ p1 <- post_info %>%
     strip.background =element_rect(fill = "grey90")
   )
 
-save_plot("sfigs/sfig06.pdf", plot = p1, width = 8, height = 8)
+save_plot("sfigs/sfig09.pdf", plot = p1, width = 8, height = 8)

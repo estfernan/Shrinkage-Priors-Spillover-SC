@@ -1,8 +1,9 @@
 # """
-# This script generates Figures S4, which presents exploratory data analysis plots.
+# This script generates Figures S6, which presents exploratory data analysis plots.
 # """
 
 library(dplyr)
+library(ggplot2)
 library(gridExtra)
 library(tidyr)
 
@@ -86,4 +87,4 @@ p2 <- ggplot(grouptab, mapping = aes(x = date, y = beverage_sales, color = categ
     legend.position = "right"
   )
 
-save_plot("sfigs/sfig04.pdf", plot = arrangeGrob(p1, p2, ncol = 1), width = 12, height = 10)
+save_plot("sfigs/sfig06.pdf", plot = arrangeGrob(p1, p2, ncol = 1), width = 12, height = 10)
