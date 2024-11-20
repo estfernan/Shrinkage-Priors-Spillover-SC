@@ -5,6 +5,8 @@
 library(dplyr)
 library(ggplot2)
 library(gridExtra)
+library(latex2exp)
+library(scales)
 library(tidyr)
 
 source("pkg/utilities.R")
