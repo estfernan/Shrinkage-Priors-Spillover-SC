@@ -30,8 +30,8 @@ p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
     mapping = aes(yintercept = 0.95),
     linetype = "dashed"
   ) +
-  geom_line() +
-  geom_point(size = 1.75) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2.5) +
   facet_grid(
     property ~ kappa_d,
     labeller = label_bquote(cols = kappa[italic(d)]==.(kappa_d)),
@@ -39,14 +39,14 @@ p1 <- ggplot(simtab, mapping = aes(x = spillover, y = value, color = name)) +
   ) +
   scale_color_manual(
     name = "",
-    breaks = c("BSTS", "DHS", "DS2", "GSC"),
+    breaks = c("DHS", "DS2", "BSTS", "GSC"),
     labels = c(
-      "Bayesian Structural Time-Series Model",
       "Distance Horseshoe Prior",
       "Distance Spike-and-Slab Prior",
+      "Bayesian Structural Time-Series Model",
       "Generalized Synthetic Control Method"
     ),
-    values = c("#8da0cb", "#fc8d62", "#66c2a5", "#e78ac3")
+    values = c("#fc8d62", "#66c2a5", "#8da0cb", "#e78ac3")
   ) +
   scale_x_continuous(labels = percent) +
   scale_y_continuous(breaks = breaks_extended(n = 8), labels = percent) +

@@ -31,9 +31,9 @@ post_info <- draws_out %>%
 # figure 2: change in relative volume sales
 p1 <- ggplot(post_info, mapping = aes(x = other, y = mean, ymin = lwr_CI, ymax = upp_CI, color = prior)) +
   geom_vline(xintercept = dates[T0], linetype = "dashed") +
-  geom_errorbar() +
-  geom_line() +
-  geom_point(size = 1.75) +
+  geom_errorbar(linewidth = 1) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2.5) +
   facet_grid(
     ~ kappa_d,
     labeller = label_bquote(cols = kappa[italic(d)]==.(kappa_d)),
