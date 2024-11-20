@@ -93,9 +93,9 @@ post_info <- draws_out %>%
 p1 <- post_info %>%
   filter(other > dates[T0]) %>%
   ggplot(mapping = aes(x = other, y = mean, ymin = lwr_CI, ymax = upp_CI, color = percent)) +
-  geom_errorbar() +
-  geom_line() +
-  geom_point(size = 1.75) +
+  geom_errorbar(linewidth = 0.8) +
+  geom_line(linewidth = 0.8) +
+  geom_point(size = 3) +
   scale_color_discrete_sequential(
     name = "",
     palette = "Blues 2",
