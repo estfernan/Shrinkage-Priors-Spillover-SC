@@ -59,5 +59,8 @@ colnames(beverage_sales)  # lists the three-digit zip code areas
 
 The `beverage_sales` object can be used to run both `scripts/analysis.R` and `scripts/val_cutoffs.R`.
 
+## Citation
+
+> **Fernández-Morales, E.**, Oganisian, A., & Lee, Y. (2025+). Bayesian Shrinkage Priors for Penalized Synthetic Control Estimators in the Presence of Spillovers. [[arXiv]](https://arxiv.org/abs/2501.08231)
 
 [^1]: The sections assume familiarity with the methodology and setting described in the manuscript.
